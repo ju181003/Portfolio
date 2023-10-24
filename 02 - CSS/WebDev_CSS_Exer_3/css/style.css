@@ -1,0 +1,96 @@
+body{
+    background-color: white;
+}
+
+.linea1{
+    background-color: black;
+    position: absolute;
+    top: 200px;
+    width: 10px;
+    height: 400px;
+    left: 48px;
+
+}
+
+.linea2{
+    width: 10px;
+    height: 400px;
+    left: 258px;
+    background-color: black;
+    position: absolute;
+    top: 200px;
+    
+}
+
+.linea3{
+    background-color: black;
+    top: 200px;
+    width: 10px;
+    height: 400px;
+    left: 323px;
+    position: absolute;
+}
+
+.linea4{
+    background-color: black;
+    position: absolute;
+    top: 200px;
+    width: 10px;
+    height: 400px;
+    left: 533px;
+}
+
+.raya1{
+    background-color: black;
+    position: absolute;
+    top: 285px;
+    width: 484px;
+    height: 10px;
+    left: 260px;
+}
+
+.raya2{
+    background-color: black;
+    position: absolute;
+    top: 493px;
+    width: 743px;
+    height: 10px;
+    left: 0px;
+}
+
+.raya3{
+    background-color: black;
+    position: absolute;
+    top: 578px;
+    width: 330px;
+    height: 10px;
+    left: 0px;
+}
+
+
+.blue{
+    background-color: blue;
+    position: relative;
+    top: 495px;
+    width: 200px;
+    height: 75px;
+    left: 50px;
+}
+
+.red{
+    background-color: red;
+    position: relative;
+    top: 210px;
+    width: 200px;
+    height: 200px;
+    left: 325px;
+}
+
+.yellow{
+    background-color: orange;
+    position: absolute;
+    top: 210px;
+    width: 200px;
+    height: 75px;
+    left: 543px;
+}
