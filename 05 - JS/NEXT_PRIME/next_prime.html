@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exercise - Find Next Prime Number</title>
+
+    <script type="text/javascript">
+        function checkPrime() {
+            var id = document.getElementById("num");
+            var number = parseInt(document.getElementById("num").value);
+            var maxNum = parseInt(1299827);
+            if (number < maxNum && !isNaN(number)) {
+                var nextPrime = findNextPrime(number);
+                if (nextPrime) {
+                    document.getElementById("result").textContent = "Next Prime Number: " + nextPrime;
+                } else {
+                    document.getElementById("result").textContent = "No prime number found in the given range.";
+                }
+            } else {
+                window.alert("Please Enter a Number Below 1,299,827 or Enter a Valid Integer");
+                id.value = "";
+            }
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            if (num <= 3) {
+                return true;
+            }
+            if (num % 2 === 0 || num % 3 === 0) {
+                return false;
+            }
+
+            for (var i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function findNextPrime(startNum) {
+            for (var i = startNum + 1; i <= 1299827; i++) {
+                if (isPrime(i)) {
+                    return i;
+                }
+            }
+            return null;
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <input type="text" id="num" />
+            <button id="btn" onclick="checkPrime(); return false">
+                Click To Get Next Prime Number</button>
+        </div>
+        <div id="result"></div>
+    </form>
+</body>
+
+</html>

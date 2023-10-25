@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Numbers</title>
+    <script type="text/javascript" src="../SIEVE_ERATHOSTHENES/sieve.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Sieve of Erathostenes</h1>
+        <hr />
+        <p>Using the sieve_erathosthenes.js file, adjust the script so you can introduce a number into the input field and
+            then show all the prime numbers under the given number.</p>
+        <input type="text" id="num" />
+        <button id="btn" onclick="findPrimes()">Go</button>
+        <br>
+        <p id="result"></p>
+    </div>
+    <script>
+        function findPrimes() {
+            var n = parseInt(document.getElementById("num").value, 10);
+            var primes = sieve(n);
+            document.getElementById("result").textContent = "Prime numbers up to " + n + ": " + primes.join(", ");
+        }
+    </script>
+</body>
+</html>
