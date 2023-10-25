@@ -1,0 +1,94 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1, h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: chocolate;
+}
+
+select {
+    background-color: grey;
+}
+
+tbody {
+    background-color: bisque;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+thead {
+    background-color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ol[start]{
+    background-color: yellowgreen;
+}
+
+.skills li::first-letter{
+    font-size: large;
+}
+
+.highlight{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.header~nav{
+    font-style: normal;
+    font-size: medium;
+    color:aquamarine;
+}
+
+.header blockquote{
+    font-size: x-large;
+    display: inline;
+    padding-bottom: 15px;
+}
+.header blockquote:hover{
+    color:yellow;
+}
+
+.header h1{
+    background-color: black;
+    color:blanchedalmond;
+    padding: 20px;
+    border: red dashed 10px;
+    margin: 20px;
+}
+
+.header strong{
+    font-size: large;
+    display: block;
+}
+
+.destinations tbody td{
+    border: green double 0.5px;
+    font-style: italic;
+}
+    
+    .destinations{
+    border: blue double 0.5px;
+}
+
+.newTable tbody{
+    background-color: brown;
+    color: azure;
+}
+.destinations tbody td .odd{
+    
+    background: aliceblue;
+    font-style: italic;
+}
+
+
+#birthdays{
+    background-color: blueviolet;
+    
+}
+
