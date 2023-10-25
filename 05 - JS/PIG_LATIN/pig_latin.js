@@ -1,23 +1,33 @@
+/*
+Pig Latin
+*/
+
 function igpayAtinlay(str) {
-    function isVowel(char) {
-        return ['a', 'e', 'i', 'o', 'u'].includes(char.toLowerCase());
-    }
-
-    function translateWord(word) {
-        if (isVowel(word[0])) {
-            return word + 'way';
+    // TODO: Initialize the word array properly
+    var returnArray = [],
+      wordArray = [];
+    // TODO: make sure that the output is being properly built to produce the desired result.
+    for (var i = 0; i < wordArray.length; i++) {
+      var word = wordArray[i];
+      var beginning = word.charAt(0);
+  
+      if (/[aeiouAEIOU]/.test(beginning)) {
+        returnArray.push(word);
+        continue;
+      }
+  
+      for (var ii = 1; ii < word.length; ii++) {
+        if (/[aeiouAEIOU]/.test(word.charAt(ii))) {
+          break;
         } else {
-            var firstVowelIndex = 0;
-            while (firstVowelIndex < word.length && !isVowel(word[firstVowelIndex])) {
-                firstVowelIndex++;
-            }
-            return word.slice(firstVowelIndex) + word.slice(0, firstVowelIndex) + 'ay';
+          beginning += word.charAt(ii);
         }
+      }
     }
-
-    return str.split(' ').map(translateWord).join(' ');
-}
-
-console.log(igpayAtinlay("pizza")); // "izzapay"
-console.log(igpayAtinlay("apple")); // "appleway"
-console.log(igpayAtinlay("happy meal")); // "appyhay ealmay"
+    return returnArray.join(" ");
+  }
+  
+  // Some examples of expected outputs
+  console.log(igpayAtinlay("pizza")); // "izzapay"
+  console.log(igpayAtinlay("apple")); // "appleway"
+  console.log(igpayAtinlay("happy meal")); // "appyhay ealmay"

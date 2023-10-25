@@ -1,7 +1,6 @@
-var myGamePiece = [];
-
-var happySrc = "../imagess/smiley.gif";
-var sadSrc = "/imagess/angry.gif";
+var myGamePiece = new Array();
+var happySrc = "images/smiley.gif";
+var sadSrc = "images/angry.gif";
 var maxDist = 5;
 
 var myGameArea = {
@@ -43,54 +42,40 @@ function flatlander(width, height, x, y, isHappy) {
     ctx.fillText(this.happyPoints, this.x, this.y + 5);
   };
   this.newPos = function (canvasWidth, canvasHeight) {
-    this.x += this.speedX;
-    this.y += this.speedY;
-
-    if (this.x <= 0 || this.x >= canvasWidth - this.width) {
-      this.speedX = -this.speedX;
-    }
-
-    if (this.y <= 0 || this.y >= canvasHeight - this.height) {
-      this.speedY = -this.speedY;
-    }
+    // TODO: Update the x, y position using the this.speedX and this.speedY
+    // values of the object. Make sure that when they reach an edge, they
+    // bounce back.
   };
   this.moreHappy = function () {
-    this.happyPoints++;
-    if (this.happyPoints >= 0) {
-      this.isHappy = true;
-      this.image.src = happySrc;
-    }
+    // TODO: increase the happyPoints value and check if the isHappy flag
+    // needs to be updated along with the image being displayed
   };
   this.lessHappy = function () {
-    this.happyPoints--;
-    if (this.happyPoints < 0) {
-      this.isHappy = false;
-      this.image.src = sadSrc;
-    }
+    // TODO: decrease the happyPoints value and check if the isHappy flag
+    // needs to be updated along with the image being displayed
   };
   this.checkSurroundings = function (other) {
-    var xDiff = this.x - other.x;
-    var yDiff = this.y - other.y;
-    return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    var x = Math.pow(this.x - other.x, 2);
+    var y = Math.pow(this.y - other.y, 2);
+    return Math.sqrt(x + y);
   };
 }
 
 function startGame() {
-  var n = parseInt(document.getElementById("happyCount").value);
-  var m = parseInt(document.getElementById("sadCount").value);
-  if (m > n) {
-    window.alert("Cannot have more sad individuals than happy individuals.");
+  // TODO: make sure to get all the values from the screen
+  var n = 1;
+  var m = 1;
+  if (parseInt(m) > parseInt(n)) {
+    window.alert("Can not have more sad than individuals.");
     return;
   }
   var sad = 0;
   for (i = 0; i < n; i++) {
-    var nX = Math.random() * myGameArea.canvas.width;
-    var nY = Math.random() * myGameArea.canvas.height;
-    var gamePiece = new flatlander(30, 30, nX, nY, sad < m);
+   
+    var nX = (Math.random() * 10000) % myGameArea.canvas.width;
+    var nY = (Math.random() * 10000) % myGameArea.canvas.height;
+    var gamePiece = new flatlander(30, 30, nX, nY, ++sad > m);
     myGamePiece.push(gamePiece);
-    if (sad < m) {
-      sad++;
-    }
   }
   myGameArea.start();
 }

@@ -1,0 +1,14 @@
+html {
+     min-height: 100%;
+     position: relative;
+}
+
+body {
+    background-color: blue;
+    color:aliceblue;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}

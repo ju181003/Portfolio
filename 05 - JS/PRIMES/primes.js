@@ -3,8 +3,11 @@
     all Prime Factors (if there are any) and display them.
 */
 
-var getPrimeFactors = function (n) {
+var getPrimeFactors = function () {
   "use strict";
+
+  const input = document.querySelector("#num");
+  const n = input.value;
 
   function isPrime(n) {
     var i;
@@ -23,8 +26,14 @@ var getPrimeFactors = function (n) {
   //TODO: Check which numbers are factors of n and also check if
   // that number also happens to be a prime
 
-  return sequence;
+  for (i = 2; i <= n; i++) {
+    if (n % i === 0 && isPrime(i)) {
+      sequence.push(i);
+    }
+  }
+
+  const output = document.querySelector("#pf");
+  pf.innerText = sequence;
 };
 
-// the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
 console.log(getPrimeFactors(30030));
